@@ -5,6 +5,21 @@
   "windows": ["main"],
   "permissions": [
     "core:default",
-    "opener:default"
+    "fs:allow-stat",
+    "fs:allow-read-text-file",
+    "fs:allow-resource-read-recursive",
+    {
+      "identifier": "fs:scope",
+      "allow": ["$RESOURCE/**/*"]
+    },
+    "opener:default",
+    {
+      "identifier": "fs:allow-read-file",
+      "allow": [
+        { "path": "$RESOURCE/**" },
+        { "path": "$DATA/com.moaad.wisper-app/tauri-plugin-mic-recorder/*" }
+      ]
+    },
+    "mic-recorder:default"
   ]
 }
